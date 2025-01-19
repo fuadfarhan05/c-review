@@ -1,26 +1,36 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
-    int num = rand() % 5 + 1;
-    int userInput;
+    string userInput;
+    vector<string> tasks = {};
+    string yesInput = "no";
+
+    cout << "Do you want to see your tasks?[yes][no]";
+    cin >> yesInput;
     
 
-    while(userInput != num) {
-        cout << "Guess a number:"; 
+
+    while(yesInput == "yes") {
+        cout << "Here is your to do list:" << endl;
+        if (tasks.empty()){
+            cout<< "You have no tasks here" << endl;
+        } else {
+            for(const string& task: tasks ) {
+                cout << "_ " << task << endl;
+            }
+        }
+
+        cout << "Add a task here:";
         cin >> userInput;
-        if (userInput == num) {
-            cout << "You guessed correct";
-        }
-        else {
-            cout << "Try again" << endl;
-        }
-        
+        tasks.push_back(userInput);
+
     }
     
 
-
     
+
 
     return 0;
 }
