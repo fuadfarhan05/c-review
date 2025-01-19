@@ -9,8 +9,6 @@ int main() {
 
     cout << "Do you want to see your tasks?[yes][no]";
     cin >> yesInput;
-    
-
 
     while(yesInput == "yes") {
         cout << "Here is your to do list:" << endl;
@@ -21,16 +19,10 @@ int main() {
                 cout << "_ " << task << endl;
             }
         }
-
         cout << "Add a task here:";
         cin >> userInput;
         tasks.push_back(userInput);
 
     }
-    
-
-    
-
-
     return 0;
 }
